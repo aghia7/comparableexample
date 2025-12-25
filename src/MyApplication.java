@@ -2,7 +2,6 @@ import models.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class MyApplication {
     public static void main(String[] args) {
@@ -15,7 +14,7 @@ public class MyApplication {
         list.add(new Student("Make", "Makebayev", 4.0));
         list.add(new Student("Zhake", "Zhakebayev", 2.99));
 
-        list.sort(Comparator.comparingDouble(Student::getGpa));
+        Collections.sort(list);
 
         for (Student student : list) {
             System.out.println(student);

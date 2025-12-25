@@ -1,6 +1,6 @@
 package models;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private static int id_gen = 1;
     private final int id;
     private String name;
@@ -44,6 +44,19 @@ public class Student {
 
     public void setGpa(double gpa) {
         this.gpa = gpa;
+    }
+
+    @Override
+    public int compareTo(Student anotherStudent) {
+        if (gpa > anotherStudent.gpa) {
+            return 1;
+        }
+
+        if (gpa < anotherStudent.gpa) {
+            return -1;
+        }
+
+        return 0;
     }
 
     @Override
